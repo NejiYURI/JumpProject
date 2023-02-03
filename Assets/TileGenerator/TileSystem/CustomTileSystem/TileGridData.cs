@@ -60,6 +60,7 @@ namespace CustomTileSystem
 
         public void SetTileShow(bool i_Set)
         {
+            IsLight = i_Set;
             if (tileScript != null)
             {
                 tileScript.ShowSprite(i_Set);
@@ -68,6 +69,7 @@ namespace CustomTileSystem
 
         public void SetTileShow_FlipFlop()
         {
+            IsLight = !IsLight;
             if (tileScript != null)
             {
                 tileScript.ShowSprite_FlipFlop();

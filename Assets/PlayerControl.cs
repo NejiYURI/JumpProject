@@ -35,6 +35,42 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""3fbafc4d-fdd3-4a3c-a79d-97ee6618e9ac"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""305941ad-2e5a-44af-932b-3214a6810ff7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc9c069f-183b-4580-97e6-0a0cbed54f15"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""c1c13f34-cd70-4542-bc30-fffc35fe027c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +84,50 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                     ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0d94a70-24fe-4b8f-b728-a407d8cbd460"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1303b94-4310-4ab8-955c-f8940c80c3ef"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4b2a797-1dcb-4a12-9a05-fce20bb484e9"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6da808d-bbbf-4995-ade3-ef243539ff00"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +137,10 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
         // BasicControl
         m_BasicControl = asset.FindActionMap("BasicControl", throwIfNotFound: true);
         m_BasicControl_Action = m_BasicControl.FindAction("Action", throwIfNotFound: true);
+        m_BasicControl_Up = m_BasicControl.FindAction("Up", throwIfNotFound: true);
+        m_BasicControl_Down = m_BasicControl.FindAction("Down", throwIfNotFound: true);
+        m_BasicControl_Left = m_BasicControl.FindAction("Left", throwIfNotFound: true);
+        m_BasicControl_Right = m_BasicControl.FindAction("Right", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -117,11 +201,19 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_BasicControl;
     private IBasicControlActions m_BasicControlActionsCallbackInterface;
     private readonly InputAction m_BasicControl_Action;
+    private readonly InputAction m_BasicControl_Up;
+    private readonly InputAction m_BasicControl_Down;
+    private readonly InputAction m_BasicControl_Left;
+    private readonly InputAction m_BasicControl_Right;
     public struct BasicControlActions
     {
         private @PlayerControl m_Wrapper;
         public BasicControlActions(@PlayerControl wrapper) { m_Wrapper = wrapper; }
         public InputAction @Action => m_Wrapper.m_BasicControl_Action;
+        public InputAction @Up => m_Wrapper.m_BasicControl_Up;
+        public InputAction @Down => m_Wrapper.m_BasicControl_Down;
+        public InputAction @Left => m_Wrapper.m_BasicControl_Left;
+        public InputAction @Right => m_Wrapper.m_BasicControl_Right;
         public InputActionMap Get() { return m_Wrapper.m_BasicControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -134,6 +226,18 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                 @Action.started -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnAction;
                 @Action.performed -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnAction;
                 @Action.canceled -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnAction;
+                @Up.started -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnUp;
+                @Down.started -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnDown;
+                @Down.performed -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnDown;
+                @Down.canceled -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnDown;
+                @Left.started -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnLeft;
+                @Left.performed -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnLeft;
+                @Left.canceled -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnLeft;
+                @Right.started -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnRight;
+                @Right.performed -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnRight;
+                @Right.canceled -= m_Wrapper.m_BasicControlActionsCallbackInterface.OnRight;
             }
             m_Wrapper.m_BasicControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -141,6 +245,18 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                 @Action.started += instance.OnAction;
                 @Action.performed += instance.OnAction;
                 @Action.canceled += instance.OnAction;
+                @Up.started += instance.OnUp;
+                @Up.performed += instance.OnUp;
+                @Up.canceled += instance.OnUp;
+                @Down.started += instance.OnDown;
+                @Down.performed += instance.OnDown;
+                @Down.canceled += instance.OnDown;
+                @Left.started += instance.OnLeft;
+                @Left.performed += instance.OnLeft;
+                @Left.canceled += instance.OnLeft;
+                @Right.started += instance.OnRight;
+                @Right.performed += instance.OnRight;
+                @Right.canceled += instance.OnRight;
             }
         }
     }
@@ -148,5 +264,9 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
     public interface IBasicControlActions
     {
         void OnAction(InputAction.CallbackContext context);
+        void OnUp(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
+        void OnLeft(InputAction.CallbackContext context);
+        void OnRight(InputAction.CallbackContext context);
     }
 }

@@ -97,17 +97,17 @@ namespace CustomTileSystem
             return SelectList.Contains(i_targetVector);
         }
 
-        public void StartWave(Vector2Int i_Center, int i_Range, bool CenterChangeShow = true)
+        public void StartWave(Vector2Int i_Center, int i_Range)
         {
-            StartCoroutine(TileWave(i_Center, i_Range, CenterChangeShow));
+            StartCoroutine(TileWave(i_Center, i_Range));
         }
 
-        public void ReverseWave(Vector2Int i_Center, int i_Range, bool CenterChangeShow = true)
+        public void ReverseWave(Vector2Int i_Center, int i_Range)
         {
-            StartCoroutine(ReverseTileWave(i_Center, i_Range, CenterChangeShow));
+            StartCoroutine(ReverseTileWave(i_Center, i_Range));
         }
 
-        IEnumerator TileWave(Vector2Int i_Center, int i_Range, bool CenterChangeShow = true)
+        IEnumerator TileWave(Vector2Int i_Center, int i_Range)
         {
             if (TileManager.tileManager != null)
             {
@@ -119,7 +119,7 @@ namespace CustomTileSystem
                         foreach (Vector2Int grid in Tiles[index])
                         {
                             bool isSuccess = false;
-                            StartCoroutine(SingleTileWave(TileManager.tileManager.GetTileData(grid, out isSuccess), ((grid == i_Center && CenterChangeShow) || grid != i_Center)));
+                            StartCoroutine(SingleTileWave(TileManager.tileManager.GetTileData(grid, out isSuccess)));
                         }
                         yield return new WaitForSeconds(0.08f);
                     }
@@ -127,19 +127,19 @@ namespace CustomTileSystem
             }
         }
 
-        IEnumerator ReverseTileWave(Vector2Int i_Center, int i_Range, bool CenterChangeShow = true)
+        IEnumerator ReverseTileWave(Vector2Int i_Center, int i_Range)
         {
             if (TileManager.tileManager != null)
             {
                 Dictionary<int, List<Vector2Int>> Tiles = TileManager.tileManager.GetListOfRange(i_Center);
-                for (int index = i_Range-1; index >= 0; index--)
+                for (int index = i_Range - 1; index >= 0; index--)
                 {
                     if (Tiles.ContainsKey(index))
                     {
                         foreach (Vector2Int grid in Tiles[index])
                         {
                             bool isSuccess = false;
-                            StartCoroutine(SingleTileWave(TileManager.tileManager.GetTileData(grid, out isSuccess), ((grid == i_Center && CenterChangeShow) || grid != i_Center)));
+                            StartCoroutine(SingleTileWave(TileManager.tileManager.GetTileData(grid, out isSuccess)));
                         }
                         yield return new WaitForSeconds(0.08f);
                     }
@@ -147,10 +147,10 @@ namespace CustomTileSystem
             }
 
         }
-        IEnumerator SingleTileWave(TileGridData TargetTile, bool ChangeShow)
+        IEnumerator SingleTileWave(TileGridData TargetTile)
         {
             Transform targetObj = TargetTile.GetTileGameObject().transform;
-            if (ChangeShow) TargetTile.SetTileShow_FlipFlop();
+            if (TargetTile.CharacterOnTile == null) TargetTile.SetTileShow_FlipFlop();
             Vector2 pos = (Vector2)targetObj.position;
             float Timer = 0;
             while (Timer <= 1f)
