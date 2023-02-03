@@ -15,6 +15,8 @@ namespace CustomTileSystem
 
         private TileObject tileScript;
 
+        private TileData tileData;
+
         public int G;
         public int H;
 
@@ -50,12 +52,10 @@ namespace CustomTileSystem
             return tileObject;
         }
 
-        public void SetTile(TileData i_setData)
+        public void SetTileData(TileData i_setData,bool initTile=false)
         {
-            if (tileScript != null)
-            {
-                tileScript.TileSet(i_setData);
-            }
+            tileData = i_setData;
+            if (initTile) tileData.TileInit(this);
         }
 
         public void SetTileShow(bool i_Set)

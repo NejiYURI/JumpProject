@@ -49,7 +49,7 @@ public class MainGameManager : MonoBehaviour
             if (!SpawnNew) i_Character.transform.position = gridData.WorldLocation;
             if (SpawnCharacter.GetComponent<IF_GameCharacter>() != null)
             {
-                TileManager.tileManager.CharacterInTile(gridData.GridPosition, SpawnCharacter.GetComponent<IF_GameCharacter>(), true);
+                TileManager.tileManager.CharacterInTile(gridData.GridPosition, SpawnCharacter.GetComponent<IF_GameCharacter>());
                 SpawnCharacter.GetComponent<IF_GameCharacter>().TileVector = gridData.GridPosition;
             }
             return SpawnCharacter;

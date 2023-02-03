@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using CustomTileSystem;
+
 [CustomEditor(typeof(TileManager))]
 public class TileGeneratorEditor : Editor
 {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 namespace CustomTileSystem
 {
@@ -17,6 +18,7 @@ namespace CustomTileSystem
         public TileData tile_SelectedBySystem;
 
         public Transform SpawnTarget;
+        public bool SpawnAtFirst = true;
 
         public int Row = 5;
         public int Col = 5;
@@ -33,7 +35,8 @@ namespace CustomTileSystem
         {
             tileManager = this;
             GridMap = new Dictionary<Vector2Int, TileGridData>();
-            GenerateBaseTile();
+            if (SpawnAtFirst)
+                GenerateBaseTile();
         }
         void Start()
         {
@@ -87,13 +90,13 @@ namespace CustomTileSystem
             return GridMap.ContainsKey(i_pos);
         }
 
-        public void CharacterInTile(Vector2Int gridPos, IF_GameCharacter if_Character,bool showTile=false)
+        public void CharacterInTile(Vector2Int gridPos, IF_GameCharacter if_Character)
         {
             if (HasTile(gridPos))
             {
                 SetTileBlock(gridPos, true);
                 GridMap[gridPos].CharacterOnTile = if_Character;
-                GridMap[gridPos].SetTileShow(showTile);
+                GridMap[gridPos].SetTileShow(if_Character.IsPlayer);
             }
         }
 
@@ -144,8 +147,8 @@ namespace CustomTileSystem
 
         public void ActiveTile(Vector2Int i_pos)
         {
-            if (HasTile(i_pos))
-                GridMap[i_pos].SetTile(tile_SelectedByUser);
+            //if (HasTile(i_pos))
+                //GridMap[i_pos].SetTile(tile_SelectedByUser);
         }
 
         public void SelectTile(Vector2Int i_pos)
@@ -153,7 +156,7 @@ namespace CustomTileSystem
             if (HasTile(i_pos))
             {
                 GridMap[i_pos].IsSelected = true;
-                GridMap[i_pos].SetTile(tile_SelectedBySystem);
+                //GridMap[i_pos].SetTile(tile_SelectedBySystem);
             }
 
         }
@@ -163,7 +166,7 @@ namespace CustomTileSystem
             if (HasTile(i_pos))
             {
                 GridMap[i_pos].IsSelected = false;
-                GridMap[i_pos].SetTile(tile_Normal);
+                //GridMap[i_pos].SetTile(tile_Normal);
             }
 
         }
@@ -174,11 +177,11 @@ namespace CustomTileSystem
             {
                 if (GridMap[i_pos].IsSelected)
                 {
-                    GridMap[i_pos].SetTile(tile_SelectedBySystem);
+                   // GridMap[i_pos].SetTile(tile_SelectedBySystem);
                 }
                 else
                 {
-                    GridMap[i_pos].SetTile(tile_Normal);
+                    //GridMap[i_pos].SetTile(tile_Normal);
                 }
 
             }
@@ -221,6 +224,41 @@ namespace CustomTileSystem
                         }
                         NewGridData.SetTileShow(false);
                     }
+                }
+            }
+        }
+
+        public void GenerateBySetupTiles(List<LevelTile> levelTiles)
+        {
+            ClearBaseTile();
+
+            foreach (var item in levelTiles)
+            {
+                Transform SpawnBase = this.transform;
+                if (SpawnTarget != null)
+                    SpawnBase = SpawnTarget;
+                Vector2Int GridPos = new Vector2Int(item.gridVector.x, item.gridVector.y);
+                Vector2 pos = ToScreenVector(GridPos, TileSize);
+                pos += (Vector2)SpawnBase.position;
+                GameObject newTile = Instantiate(basicTile, pos, Quaternion.identity);
+                TileGridData NewGridData = new TileGridData();
+                if (newTile.GetComponent<TileObject>() != null)
+                {
+                    newTile.name = "Tile[" + item.gridVector.x + "," + item.gridVector.y + "] of pos [" + pos.x + "," + pos.y + "]";
+                    newTile.transform.localScale = new Vector2(TileSize, TileSize);
+                    NewGridData.SetTileObject(newTile);
+                    NewGridData.GridPosition = GridPos;
+                    NewGridData.WorldLocation = pos;
+                    if (SpawnTarget != null)
+                        newTile.transform.SetParent(SpawnTarget);
+                    else
+                        newTile.transform.SetParent(this.transform);
+                    if (!GridMap.ContainsKey(GridPos))
+                    {
+                        //Debug.Log("Add Key " + GridPos);
+                        GridMap.Add(GridPos, NewGridData);
+                    }
+                    NewGridData.SetTileData(item.tileData,true);
                 }
             }
         }

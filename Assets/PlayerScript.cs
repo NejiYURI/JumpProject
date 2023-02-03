@@ -82,7 +82,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
                     TileManager.tileManager.CharacterLeaveTile(TileVector);
                     transform.LeanMove(TileManager.tileManager.GetTileWorldPosition(TileVector + i_dir, out isSuccess), 0.1f);
                     this.TileVector = TileVector + i_dir;
-                    TileManager.tileManager.CharacterInTile(TileVector, this, true);
+                    TileManager.tileManager.CharacterInTile(TileVector, this);
                     if (MainGameManager.mainGameManager != null)
                     {
                         MainGameManager.mainGameManager.SetPlayerPos(TileVector);

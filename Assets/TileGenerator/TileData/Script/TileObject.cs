@@ -29,6 +29,12 @@ public class TileObject : MonoBehaviour
         this.spriteRenderer.sprite = this.TileData.TileImage;
     }
 
+    public void TileSpriteSet(Sprite i_sprite)
+    {
+        if (this.spriteRenderer == null) this.spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        this.spriteRenderer.sprite = i_sprite;
+    }
+
     public void ShowSprite(bool i_Set)
     {
         this.spriteRenderer.enabled= i_Set;
