@@ -1,0 +1,34 @@
+{
+    "name": "PlayerControl",
+    "maps": [
+        {
+            "name": "BasicControl",
+            "id": "93aa5daf-cb6e-45e4-a315-bfe9e93af69a",
+            "actions": [
+                {
+                    "name": "Action",
+                    "type": "Button",
+                    "id": "d0d79808-774d-4d46-a0d9-bd23b1a8c041",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "acff50cf-f2a8-4e2b-87d4-4f4495acfa2d",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
