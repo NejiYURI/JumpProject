@@ -375,10 +375,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicTile: {fileID: 2623259310096245758, guid: 44ea71661e810aa4795c1d5c1c3be472, type: 3}
-  tile_Normal: {fileID: 11400000, guid: e48af6fc43109b14dbc8830aa1c30933, type: 2}
+  tile_Normal: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   tile_SelectedByUser: {fileID: 11400000, guid: 7ac5767ea18d53d4eb1cceaa11a588a1, type: 2}
   tile_SelectedBySystem: {fileID: 11400000, guid: e949ad16446b91146bfc86ba12825c6d, type: 2}
   SpawnTarget: {fileID: 156507915}
+  SpawnAtFirst: 1
   Row: 9
   Col: 9
   TileSize: 1
@@ -495,6 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TileVector: {x: 0, y: 0}
+  IsPlayer: 1
 --- !u!1 &1770416774
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,7 +52,7 @@ namespace CustomTileSystem
             return tileObject;
         }
 
-        public void SetTileData(TileData i_setData,bool initTile=false)
+        public void SetTileData(TileData i_setData, bool initTile = false)
         {
             tileData = i_setData;
             if (initTile) tileData.TileInit(this);
@@ -60,20 +60,17 @@ namespace CustomTileSystem
 
         public void SetTileShow(bool i_Set)
         {
-            IsLight = i_Set;
-            if (tileScript != null)
-            {
-                tileScript.ShowSprite(i_Set);
-            }
+            if (tileData == null) return;
+            if (i_Set)
+                tileData.TileShow(this);
+            else
+                tileData.TileHide(this);
         }
 
         public void SetTileShow_FlipFlop()
         {
-            IsLight = !IsLight;
-            if (tileScript != null)
-            {
-                tileScript.ShowSprite_FlipFlop();
-            }
+            if (tileData == null) return;
+            tileData.TileFlipFlop(this);
         }
     }
 }

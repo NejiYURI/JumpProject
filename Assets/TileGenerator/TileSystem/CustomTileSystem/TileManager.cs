@@ -207,7 +207,7 @@ namespace CustomTileSystem
                     TileGridData NewGridData = new TileGridData();
                     if (newTile.GetComponent<TileObject>() != null)
                     {
-                        newTile.GetComponent<TileObject>().TileSet(tile_Normal);
+                        //newTile.GetComponent<TileObject>().TileSet(tile_Normal);
                         newTile.name = "Tile[" + x + "," + y + "] of pos [" + pos.x + "," + pos.y + "]";
                         newTile.transform.localScale = new Vector2(TileSize, TileSize);
                         NewGridData.SetTileObject(newTile);
@@ -222,6 +222,7 @@ namespace CustomTileSystem
                             //Debug.Log("Add Key " + GridPos);
                             GridMap.Add(GridPos, NewGridData);
                         }
+                        NewGridData.SetTileData(tile_Normal, true);
                         NewGridData.SetTileShow(false);
                     }
                 }
