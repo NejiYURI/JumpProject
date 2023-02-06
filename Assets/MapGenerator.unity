@@ -230,6 +230,10 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 1}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
     IsStartPoint: 0
+  - name: EndTile
+    color: {r: 0, g: 0, b: 1, a: 1}
+    tileData: {fileID: 11400000, guid: 788cd7ad367a5eb41a95887ba170cdfd, type: 2}
+    IsStartPoint: 0
   levelTiles: []
   StartLocation: {x: 0, y: 0}
 --- !u!1 &1700117053

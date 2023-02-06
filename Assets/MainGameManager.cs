@@ -12,6 +12,8 @@ public class MainGameManager : MonoBehaviour
     public static MainGameManager mainGameManager;
     public GameObject PlayerObject;
 
+    public LevelData levelData;
+
     public Vector2Int PlayerStartPos;
 
     private Vector2Int Player_Position;
@@ -22,13 +24,20 @@ public class MainGameManager : MonoBehaviour
     }
     private void Start()
     {
-        if (TileManager.tileManager != null)
+        if (TileManager.tileManager != null && levelData != null)
         {
-            SpawnCharacter(PlayerStartPos, PlayerObject, false);
-            if (TileManager.tileManager.HasTile(PlayerStartPos))
-            {
-                SetPlayerPos(PlayerStartPos);
-            }
+            StartCoroutine(GameStartFunc());
+        }
+    }
+
+    IEnumerator GameStartFunc()
+    {
+        yield return TileManager.tileManager.GenerateBySetupTiles(levelData.TileData);
+        PlayerStartPos = levelData.StartLocation;
+        SpawnCharacter(PlayerStartPos, PlayerObject, false);
+        if (TileManager.tileManager.HasTile(PlayerStartPos))
+        {
+            SetPlayerPos(PlayerStartPos);
         }
     }
 
@@ -72,5 +81,7 @@ public class MainGameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+
 }
 

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 namespace CustomTileSystem
 {
@@ -229,7 +228,7 @@ namespace CustomTileSystem
             }
         }
 
-        public void GenerateBySetupTiles(List<LevelTile> levelTiles)
+        public bool GenerateBySetupTiles(List<LevelTile> levelTiles)
         {
             ClearBaseTile();
 
@@ -262,6 +261,8 @@ namespace CustomTileSystem
                     NewGridData.SetTileData(item.tileData,true);
                 }
             }
+
+            return true;
         }
 
         public Dictionary<int, List<Vector2Int>> GetListOfRange(Vector2Int i_CenterPos)

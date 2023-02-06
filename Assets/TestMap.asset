@@ -67,6 +67,8 @@ MonoBehaviour:
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   - gridVector: {x: -6, y: 10}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
+  - gridVector: {x: -6, y: 11}
+    tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   - gridVector: {x: -6, y: 13}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   - gridVector: {x: -6, y: 14}
@@ -95,10 +97,12 @@ MonoBehaviour:
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   - gridVector: {x: -7, y: 10}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
+  - gridVector: {x: -7, y: 11}
+    tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   - gridVector: {x: -7, y: 13}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   - gridVector: {x: -7, y: 14}
-    tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
+    tileData: {fileID: 11400000, guid: 788cd7ad367a5eb41a95887ba170cdfd, type: 2}
   - gridVector: {x: -7, y: 15}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   - gridVector: {x: -8, y: 0}
@@ -122,6 +126,8 @@ MonoBehaviour:
   - gridVector: {x: -8, y: 9}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   - gridVector: {x: -8, y: 10}
+    tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
+  - gridVector: {x: -8, y: 11}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
   - gridVector: {x: -8, y: 13}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}

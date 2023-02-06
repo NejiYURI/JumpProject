@@ -98,7 +98,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         this.CanJump = false;
         Vector2Int tmpVec = TileVector;
         TileInteractScript.tileInteract.StartWave(tmpVec, 4);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         TileInteractScript.tileInteract.ReverseWave(tmpVec, 4);
         this.CanJump = true;
     }
