@@ -234,6 +234,10 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 1, a: 1}
     tileData: {fileID: 11400000, guid: 788cd7ad367a5eb41a95887ba170cdfd, type: 2}
     IsStartPoint: 0
+  - name: LightTile
+    color: {r: 0, g: 1, b: 1, a: 1}
+    tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
+    IsStartPoint: 0
   levelTiles: []
   StartLocation: {x: 0, y: 0}
 --- !u!1 &1700117053

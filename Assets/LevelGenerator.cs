@@ -51,6 +51,7 @@ public class LevelGenerator : MonoBehaviour
         {
             if (item.color.Equals(pixelColor))
             {
+                Debug.Log(item.name);
                 if (item.IsStartPoint) StartLocation = new Vector2Int(x * -1, y);
                 LevelTile tmpData = new LevelTile();
                 tmpData.gridVector = new Vector2Int(x*-1, y);
