@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CustomTileSystem
@@ -147,7 +148,7 @@ namespace CustomTileSystem
         public void ActiveTile(Vector2Int i_pos)
         {
             //if (HasTile(i_pos))
-                //GridMap[i_pos].SetTile(tile_SelectedByUser);
+            //GridMap[i_pos].SetTile(tile_SelectedByUser);
         }
 
         public void SelectTile(Vector2Int i_pos)
@@ -176,7 +177,7 @@ namespace CustomTileSystem
             {
                 if (GridMap[i_pos].IsSelected)
                 {
-                   // GridMap[i_pos].SetTile(tile_SelectedBySystem);
+                    // GridMap[i_pos].SetTile(tile_SelectedBySystem);
                 }
                 else
                 {
@@ -222,7 +223,6 @@ namespace CustomTileSystem
                             GridMap.Add(GridPos, NewGridData);
                         }
                         NewGridData.SetTileData(tile_Normal, true);
-                        NewGridData.SetTileShow(false);
                     }
                 }
             }
@@ -258,11 +258,59 @@ namespace CustomTileSystem
                         //Debug.Log("Add Key " + GridPos);
                         GridMap.Add(GridPos, NewGridData);
                     }
-                    NewGridData.SetTileData(item.tileData,true);
+                    NewGridData.SetTileData(item.tileData, true);
                 }
             }
 
             return true;
+        }
+
+        public void GenerateCustomTile(Transform TargetPos, GameObject i_TileObj, Vector2Int CenterPos, TileData tileData, int Range, out Dictionary<int, List<TileGridData>> TargetTileList)
+        {
+            TargetTileList = new Dictionary<int, List<TileGridData>>();
+            int CurRange = Range;
+            Transform SpawnBase = this.transform;
+            if (SpawnTarget != null)
+                SpawnBase = SpawnTarget;
+            for (int x = 0; x <= Range; x++)
+            {
+                for (int y = CurRange - 1; y > -CurRange; y--)
+                {
+                    if (CenterPos + new Vector2Int(x, y) == CenterPos) continue;
+                    Vector2Int GridPos = new Vector2Int(x, y);
+                    TileGridData tile_1 = Generate_Tile(TargetPos, i_TileObj, tileData, ToScreenVector(CenterPos + GridPos, TileSize) + (Vector2)SpawnBase.position);
+                    int Distance = GetDistance(CenterPos + GridPos, CenterPos);
+                    if (!TargetTileList.ContainsKey(Distance)) TargetTileList.Add(Distance, new List<TileGridData>());
+                    TargetTileList[Distance].Add(tile_1);
+                    if (x != 0)
+                    {
+                        TileGridData tile_2=  Generate_Tile(TargetPos, i_TileObj, tileData, ToScreenVector(CenterPos - GridPos, TileSize) + (Vector2)SpawnBase.position);
+                        int Distance_2 = GetDistance(CenterPos + GridPos, CenterPos);
+                        if (!TargetTileList.ContainsKey(Distance_2)) TargetTileList.Add(Distance_2, new List<TileGridData>());
+                        TargetTileList[Distance_2].Add(tile_2);
+                    }
+
+                }
+                CurRange--;
+            }
+        }
+
+
+
+        TileGridData Generate_Tile(Transform TargetPos, GameObject i_TileObj, TileData tileData, Vector2 Pos)
+        {
+            GameObject newTile = Instantiate(i_TileObj, Pos, Quaternion.identity);
+            TileGridData NewGridData = new TileGridData();
+            if (newTile.GetComponent<TileObject>() != null)
+            {
+                newTile.name = "pos [" + Pos.x + "," + Pos.y + "]";
+                newTile.transform.localScale = new Vector2(TileSize, TileSize);
+                NewGridData.SetTileObject(newTile);
+                NewGridData.WorldLocation = Pos;
+                newTile.transform.SetParent(TargetPos);
+                NewGridData.SetTileData(tileData, true);
+            }
+            return NewGridData;
         }
 
         public Dictionary<int, List<Vector2Int>> GetListOfRange(Vector2Int i_CenterPos)

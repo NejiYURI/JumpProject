@@ -35,6 +35,7 @@ public class MainGameManager : MonoBehaviour
         yield return TileManager.tileManager.GenerateBySetupTiles(levelData.TileData);
         PlayerStartPos = levelData.StartLocation;
         SpawnCharacter(PlayerStartPos, PlayerObject, false);
+        if (PlayerObject.GetComponent<PlayerScript>()) PlayerObject.GetComponent<PlayerScript>().SpawnRangeTile();
         if (TileManager.tileManager.HasTile(PlayerStartPos))
         {
             SetPlayerPos(PlayerStartPos);

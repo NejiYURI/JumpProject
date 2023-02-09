@@ -456,7 +456,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 535577609
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -835836231, guid: 3900ed75c5f53ca43a972ca9ae816fb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -498,6 +498,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TileVector: {x: 0, y: 0}
   IsPlayer: 1
+  ChargeTileObj: {fileID: 2623259310096245758, guid: 5e8c1667a2a90374684a47343b77b8ea, type: 3}
+  ChargeTileData: {fileID: 11400000, guid: 64408854eda9d9048bd7a67b9571907d, type: 2}
+  ChargeMaxRange: 4
+  ChargeSpeed: 4
+  ChargeCounter: 0
 --- !u!1 &1770416774
 GameObject:
   m_ObjectHideFlags: 0
