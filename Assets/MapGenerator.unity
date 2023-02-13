@@ -220,11 +220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbe45a7e2a499e4eada14e0f2081ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapImage: {fileID: 2800000, guid: be8d3534cfdadb445b0095170f80094f, type: 3}
+  mapImage: {fileID: 2800000, guid: 09e669979cf76bc40beb4c58c1ae379b, type: 3}
   ColorToTileDatas:
   - name: StartPoint
     color: {r: 0, g: 1, b: 0, a: 1}
-    tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
+    tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
     IsStartPoint: 1
   - name: NormalTile
     color: {r: 0, g: 0, b: 0, a: 1}
@@ -237,6 +237,10 @@ MonoBehaviour:
   - name: LightTile
     color: {r: 0, g: 1, b: 1, a: 1}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
+    IsStartPoint: 0
+  - name: ReverseTile
+    color: {r: 1, g: 0.48235294, b: 0, a: 1}
+    tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
     IsStartPoint: 0
   levelTiles: []
   StartLocation: {x: 0, y: 0}

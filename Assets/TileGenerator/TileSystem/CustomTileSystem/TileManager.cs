@@ -95,8 +95,7 @@ namespace CustomTileSystem
             if (HasTile(gridPos))
             {
                 SetTileBlock(gridPos, true);
-                GridMap[gridPos].CharacterOnTile = if_Character;
-                GridMap[gridPos].SetTileShow(if_Character.IsPlayer);
+                GridMap[gridPos].SetCharacterInTile(if_Character);
             }
         }
 
@@ -106,7 +105,7 @@ namespace CustomTileSystem
             if (HasTile(gridPos))
             {
                 SetTileBlock(gridPos, false);
-                GridMap[gridPos].CharacterOnTile = null;
+                GridMap[gridPos].SetCharacterLeaveTile();
             }
         }
 
@@ -284,7 +283,7 @@ namespace CustomTileSystem
                     TargetTileList[Distance].Add(tile_1);
                     if (x != 0)
                     {
-                        TileGridData tile_2=  Generate_Tile(TargetPos, i_TileObj, tileData, ToScreenVector(CenterPos - GridPos, TileSize) + (Vector2)SpawnBase.position);
+                        TileGridData tile_2 = Generate_Tile(TargetPos, i_TileObj, tileData, ToScreenVector(CenterPos - GridPos, TileSize) + (Vector2)SpawnBase.position);
                         int Distance_2 = GetDistance(CenterPos + GridPos, CenterPos);
                         if (!TargetTileList.ContainsKey(Distance_2)) TargetTileList.Add(Distance_2, new List<TileGridData>());
                         TargetTileList[Distance_2].Add(tile_2);

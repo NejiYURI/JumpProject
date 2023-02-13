@@ -119,7 +119,7 @@ namespace CustomTileSystem
                         foreach (Vector2Int grid in Tiles[index])
                         {
                             bool isSuccess = false;
-                            StartCoroutine(SingleTileWave(TileManager.tileManager.GetTileData(grid, out isSuccess)));
+                            StartCoroutine(SingleTileWave(TileManager.tileManager.GetTileData(grid, out isSuccess),true));
                         }
                         yield return new WaitForSeconds(0.08f);
                     }
@@ -139,7 +139,7 @@ namespace CustomTileSystem
                         foreach (Vector2Int grid in Tiles[index])
                         {
                             bool isSuccess = false;
-                            StartCoroutine(SingleTileWave(TileManager.tileManager.GetTileData(grid, out isSuccess)));
+                            StartCoroutine(SingleTileWave(TileManager.tileManager.GetTileData(grid, out isSuccess),false));
                         }
                         yield return new WaitForSeconds(0.08f);
                     }
@@ -147,10 +147,10 @@ namespace CustomTileSystem
             }
 
         }
-        IEnumerator SingleTileWave(TileGridData TargetTile)
+        IEnumerator SingleTileWave(TileGridData TargetTile,bool IsFlipping)
         {
             Transform targetObj = TargetTile.GetTileGameObject().transform;
-            if (TargetTile.CharacterOnTile == null) TargetTile.SetTileShow_FlipFlop();
+            TargetTile.SetTileFlipping(IsFlipping);
             Vector2 pos = (Vector2)targetObj.position;
             float Timer = 0;
             while (Timer <= 1f)

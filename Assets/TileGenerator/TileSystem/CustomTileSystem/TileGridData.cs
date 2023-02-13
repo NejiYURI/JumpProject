@@ -28,7 +28,7 @@ namespace CustomTileSystem
 
         public bool IsSelected;
 
-        public bool IsLight;
+        public bool IsFlipping;
 
         public IF_GameCharacter CharacterOnTile;
 
@@ -52,6 +52,23 @@ namespace CustomTileSystem
             return tileObject;
         }
 
+        public void SetCharacterInTile(IF_GameCharacter i_character)
+        {
+            CharacterOnTile = i_character;
+            tileData.CharacterInTile(this, CharacterOnTile.IsPlayer);
+        }
+
+        public bool GetCanMove()
+        {
+            return tileData.GetCanMove(this);
+        }
+
+        public void SetCharacterLeaveTile()
+        {
+            CharacterOnTile = null;
+            tileData.CharacterLeaveTile(this);
+        }
+
         public void SetTileData(TileData i_setData, bool initTile = false)
         {
             tileData = i_setData;
@@ -67,10 +84,11 @@ namespace CustomTileSystem
                 tileData.TileHide(this);
         }
 
-        public void SetTileShow_FlipFlop()
+        public void SetTileFlipping(bool i_isFlipping)
         {
+            IsFlipping = i_isFlipping;
             if (tileData == null) return;
-            tileData.TileFlipFlop(this);
+            tileData.TileFlipping(this);
         }
     }
 }

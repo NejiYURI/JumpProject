@@ -21,7 +21,6 @@ public class BasicTile : TileData
         if (curObj.GetTileScript() != null)
         {
             curObj.GetTileScript().ShowSprite(true);
-            curObj.IsLight = true;
         }
     }
 
@@ -30,19 +29,37 @@ public class BasicTile : TileData
         if (curObj.GetTileScript() != null)
         {
             curObj.GetTileScript().ShowSprite(false);
-            curObj.IsLight = false;
         }
     }
 
-    public override void TileFlipFlop(TileGridData curObj)
+    public override void CharacterInTile(TileGridData curObj, bool IsPlayer)
     {
-        if (curObj.IsLight)
-        {
+        if (IsPlayer) TileShow(curObj);
+    }
+
+    public override void CharacterLeaveTile(TileGridData curObj)
+    {
+        Debug.Log(curObj.IsFlipping);
+        if (!curObj.IsFlipping)
             TileHide(curObj);
-        }
-        else
+    }
+
+    public override void TileFlipping(TileGridData curObj)
+    {
+        if (curObj.CharacterOnTile!=null && curObj.CharacterOnTile.IsPlayer) return;
+        if (curObj.IsFlipping)
         {
             TileShow(curObj);
         }
+        else
+        {
+            TileHide(curObj);
+        }
     }
+
+    public override bool GetCanMove(TileGridData curObj)
+    {
+        return curObj.IsFlipping;
+    }
+
 }

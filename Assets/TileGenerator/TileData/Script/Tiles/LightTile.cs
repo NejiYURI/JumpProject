@@ -11,7 +11,6 @@ public class LightTile : TileData
         if (curObj.GetTileScript() != null)
         {
             curObj.GetTileScript().TileSpriteSet(this.TileImage);
-            curObj.IsLight= true;
         }
     }
 

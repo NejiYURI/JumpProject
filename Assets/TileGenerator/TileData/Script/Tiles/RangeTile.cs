@@ -20,7 +20,6 @@ public class RangeTile : TileData
         if (curObj.GetTileScript() != null)
         {
             curObj.GetTileScript().ShowSprite(true);
-            curObj.IsLight = true;
         }
     }
 
@@ -29,7 +28,6 @@ public class RangeTile : TileData
         if (curObj.GetTileScript() != null)
         {
             curObj.GetTileScript().ShowSprite(false);
-            curObj.IsLight = false;
         }
     }
 

@@ -97,7 +97,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
             {
                 bool isSuccess = false;
 
-                if (TileManager.tileManager.GetTileData(TileVector + i_dir, out isSuccess).IsLight)
+                if (TileManager.tileManager.GetTileData(TileVector + i_dir, out isSuccess).GetCanMove())
                 {
                     TileManager.tileManager.CharacterLeaveTile(TileVector);
                     transform.LeanMove(TileManager.tileManager.GetTileWorldPosition(TileVector + i_dir, out isSuccess), 0.1f);
