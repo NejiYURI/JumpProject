@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicTile: {fileID: 2623259310096245758, guid: 44ea71661e810aa4795c1d5c1c3be472, type: 3}
+  levelData: {fileID: 0}
+  levelTileDatas: []
   tile_Normal: {fileID: 11400000, guid: e48af6fc43109b14dbc8830aa1c30933, type: 2}
   tile_SelectedByUser: {fileID: 11400000, guid: 7ac5767ea18d53d4eb1cceaa11a588a1, type: 2}
   tile_SelectedBySystem: {fileID: 11400000, guid: e949ad16446b91146bfc86ba12825c6d, type: 2}
@@ -220,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbe45a7e2a499e4eada14e0f2081ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapImage: {fileID: 2800000, guid: 09e669979cf76bc40beb4c58c1ae379b, type: 3}
+  mapImage: {fileID: 2800000, guid: d92bf2b203c2a8343a15378a804e4603, type: 3}
   ColorToTileDatas:
   - name: StartPoint
     color: {r: 0, g: 1, b: 0, a: 1}

@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class LevelTile
 {
+    public string TileName;
     public Vector2Int gridVector;
     public TileData tileData;
 

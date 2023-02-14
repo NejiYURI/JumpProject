@@ -3,14 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 namespace CustomTileSystem
 {
+    [System.Serializable]
+    public class LevelTileData
+    {
+        public LevelTileData(Vector2Int i_GridPos, Vector2 i_pos, GameObject i_obj, TileData i_tileData)
+        {
+            GridPos = i_GridPos;
+            pos = i_pos;
+            obj = i_obj;
+            tileData = i_tileData;
+        }
+        public Vector2Int GridPos;
+        public Vector2 pos;
+        public GameObject obj;
+        public TileData tileData;
+    }
     public class TileManager : MonoBehaviour
     {
         public static TileManager tileManager;
 
         public GameObject basicTile;
+
+        public LevelData levelData;
+
+        [SerializeField]
+        private List<LevelTileData> levelTileDatas;
 
         [Header("Tile Setting")]
         public TileData tile_Normal;
@@ -35,32 +56,21 @@ namespace CustomTileSystem
         {
             tileManager = this;
             GridMap = new Dictionary<Vector2Int, TileGridData>();
+            if (levelTileDatas.Count > 0)
+            {
+                foreach (var item in levelTileDatas)
+                {
+                    TileSetup(item.obj, item.GridPos, item.pos, item.tileData);
+                }
+            }
             if (SpawnAtFirst)
                 GenerateBaseTile();
         }
         void Start()
         {
-            Timer = 0;
-        }
-        private void FixedUpdate()
-        {
-            #region-Fancy Move
-            //Timer += Time.deltaTime;
-            //for (int i = 0; i < Row; i++)
-            //{
-            //    for (int j = 0; j < Col; j++)
-            //    {
-            //        if (HasTile(new Vector2(i, j)))
-            //        {
-            //            GameObject obj = GridMap[new Vector2(i, j)];
-            //            float ypos = Mathf.Sin(Timer * 10f + i + j) * 0.02f;
-            //            obj.transform.position += new Vector3(0, ypos, 0);
-            //        }
-            //    }
 
-            //}
-            #endregion
         }
+
 
         #region-API
         public TileGridData GetTileData(Vector2Int gridPos, out bool IsSuccess)
@@ -186,8 +196,26 @@ namespace CustomTileSystem
             }
 
         }
+
+        public void GenerateLevel()
+        {
+            if (levelData != null) GenerateBySetupTiles(levelData.TileData);
+        }
         #endregion
         #region-TileGenerateMethods
+
+        void TileSetup(GameObject newTile, Vector2Int GridPos, Vector2 pos, TileData tileData)
+        {
+            TileGridData NewGridData = new TileGridData();
+            NewGridData.SetTileObject(newTile);
+            NewGridData.GridPosition = GridPos;
+            NewGridData.WorldLocation = pos;
+            if (!GridMap.ContainsKey(GridPos))
+            {
+                GridMap.Add(GridPos, NewGridData);
+            }
+            NewGridData.SetTileData(tileData, true);
+        }
         public void GenerateBaseTile()
         {
             ClearBaseTile();
@@ -203,26 +231,13 @@ namespace CustomTileSystem
                     Vector2 pos = ToScreenVector(GridPos, TileSize);
                     pos += (Vector2)SpawnBase.position;
                     GameObject newTile = Instantiate(basicTile, pos, Quaternion.identity);
-                    TileGridData NewGridData = new TileGridData();
-                    if (newTile.GetComponent<TileObject>() != null)
-                    {
-                        //newTile.GetComponent<TileObject>().TileSet(tile_Normal);
-                        newTile.name = "Tile[" + x + "," + y + "] of pos [" + pos.x + "," + pos.y + "]";
-                        newTile.transform.localScale = new Vector2(TileSize, TileSize);
-                        NewGridData.SetTileObject(newTile);
-                        NewGridData.GridPosition = GridPos;
-                        NewGridData.WorldLocation = pos;
-                        if (SpawnTarget != null)
-                            newTile.transform.SetParent(SpawnTarget);
-                        else
-                            newTile.transform.SetParent(this.transform);
-                        if (!GridMap.ContainsKey(GridPos))
-                        {
-                            //Debug.Log("Add Key " + GridPos);
-                            GridMap.Add(GridPos, NewGridData);
-                        }
-                        NewGridData.SetTileData(tile_Normal, true);
-                    }
+                    newTile.name = "Tile[" + x + "," + y + "] of pos [" + pos.x + "," + pos.y + "]";
+                    newTile.transform.localScale = new Vector2(TileSize, TileSize);
+                    if (SpawnTarget != null)
+                        newTile.transform.SetParent(SpawnTarget);
+                    else
+                        newTile.transform.SetParent(this.transform);
+                    TileSetup(newTile, GridPos, pos, tile_Normal);
                 }
             }
         }
@@ -240,25 +255,14 @@ namespace CustomTileSystem
                 Vector2 pos = ToScreenVector(GridPos, TileSize);
                 pos += (Vector2)SpawnBase.position;
                 GameObject newTile = Instantiate(basicTile, pos, Quaternion.identity);
-                TileGridData NewGridData = new TileGridData();
-                if (newTile.GetComponent<TileObject>() != null)
-                {
-                    newTile.name = "Tile[" + item.gridVector.x + "," + item.gridVector.y + "] of pos [" + pos.x + "," + pos.y + "]";
-                    newTile.transform.localScale = new Vector2(TileSize, TileSize);
-                    NewGridData.SetTileObject(newTile);
-                    NewGridData.GridPosition = GridPos;
-                    NewGridData.WorldLocation = pos;
-                    if (SpawnTarget != null)
-                        newTile.transform.SetParent(SpawnTarget);
-                    else
-                        newTile.transform.SetParent(this.transform);
-                    if (!GridMap.ContainsKey(GridPos))
-                    {
-                        //Debug.Log("Add Key " + GridPos);
-                        GridMap.Add(GridPos, NewGridData);
-                    }
-                    NewGridData.SetTileData(item.tileData, true);
-                }
+                newTile.name = item.TileName + " Grid:[" + item.gridVector.x + "," + item.gridVector.y + "] World:[" + pos.x + "," + pos.y + "]";
+                newTile.transform.localScale = new Vector2(TileSize, TileSize);
+                if (SpawnTarget != null)
+                    newTile.transform.SetParent(SpawnTarget);
+                else
+                    newTile.transform.SetParent(this.transform);
+                TileSetup(newTile, GridPos, pos, item.tileData);
+                levelTileDatas.Add(new LevelTileData(GridPos, pos, newTile, item.tileData));
             }
 
             return true;
@@ -332,6 +336,7 @@ namespace CustomTileSystem
         public void ClearBaseTile()
         {
             GridMap = new Dictionary<Vector2Int, TileGridData>();
+            levelTileDatas = new List<LevelTileData>();
             if (SpawnTarget != null)
             {
                 while (SpawnTarget.childCount > 0)

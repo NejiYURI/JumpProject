@@ -15,173 +15,258 @@ MonoBehaviour:
   LevelName: 
   StartLocation: {x: -8, y: 1}
   TileData:
-  - gridVector: {x: -6, y: 0}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 0}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 1}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 1}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 2}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 2}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 3}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 3}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 4}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 4}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 5}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 5}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 6}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 6}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 7}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 7}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 8}
+  - TileName: ReverseTile
+    gridVector: {x: -6, y: 8}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -6, y: 9}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 9}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 10}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 10}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 11}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 11}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 12}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 12}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 13}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 13}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 14}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 14}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 15}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 15}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -6, y: 16}
+  - TileName: NormalTile
+    gridVector: {x: -6, y: 16}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 0}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 0}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 1}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 1}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 2}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 2}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 3}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 3}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 4}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 4}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 5}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 5}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 6}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 6}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 7}
+  - TileName: ReverseTile
+    gridVector: {x: -7, y: 7}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -7, y: 8}
+  - TileName: ReverseTile
+    gridVector: {x: -7, y: 8}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -7, y: 9}
+  - TileName: ReverseTile
+    gridVector: {x: -7, y: 9}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -7, y: 10}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 10}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 11}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 11}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 12}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 12}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 13}
+  - TileName: NormalTile
+    gridVector: {x: -7, y: 13}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -7, y: 14}
+  - TileName: LightTile
+    gridVector: {x: -7, y: 14}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
-  - gridVector: {x: -7, y: 15}
+  - TileName: LightTile
+    gridVector: {x: -7, y: 15}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
-  - gridVector: {x: -7, y: 16}
+  - TileName: LightTile
+    gridVector: {x: -7, y: 16}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
-  - gridVector: {x: -8, y: 0}
+  - TileName: NormalTile
+    gridVector: {x: -8, y: 0}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -8, y: 1}
+  - TileName: StartPoint
+    gridVector: {x: -8, y: 1}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
-  - gridVector: {x: -8, y: 2}
+  - TileName: NormalTile
+    gridVector: {x: -8, y: 2}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -8, y: 3}
+  - TileName: NormalTile
+    gridVector: {x: -8, y: 3}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -8, y: 4}
+  - TileName: NormalTile
+    gridVector: {x: -8, y: 4}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -8, y: 5}
+  - TileName: NormalTile
+    gridVector: {x: -8, y: 5}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -8, y: 6}
+  - TileName: ReverseTile
+    gridVector: {x: -8, y: 6}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -8, y: 7}
+  - TileName: ReverseTile
+    gridVector: {x: -8, y: 7}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -8, y: 8}
+  - TileName: ReverseTile
+    gridVector: {x: -8, y: 8}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -8, y: 9}
+  - TileName: ReverseTile
+    gridVector: {x: -8, y: 9}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -8, y: 10}
+  - TileName: ReverseTile
+    gridVector: {x: -8, y: 10}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -8, y: 11}
+  - TileName: NormalTile
+    gridVector: {x: -8, y: 11}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -8, y: 12}
+  - TileName: NormalTile
+    gridVector: {x: -8, y: 12}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -8, y: 13}
+  - TileName: NormalTile
+    gridVector: {x: -8, y: 13}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -8, y: 14}
+  - TileName: LightTile
+    gridVector: {x: -8, y: 14}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
-  - gridVector: {x: -8, y: 15}
+  - TileName: EndTile
+    gridVector: {x: -8, y: 15}
     tileData: {fileID: 11400000, guid: 788cd7ad367a5eb41a95887ba170cdfd, type: 2}
-  - gridVector: {x: -8, y: 16}
+  - TileName: LightTile
+    gridVector: {x: -8, y: 16}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
-  - gridVector: {x: -9, y: 0}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 0}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 1}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 1}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 2}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 2}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 3}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 3}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 4}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 4}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 5}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 5}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 6}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 6}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 7}
+  - TileName: ReverseTile
+    gridVector: {x: -9, y: 7}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -9, y: 8}
+  - TileName: ReverseTile
+    gridVector: {x: -9, y: 8}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -9, y: 9}
+  - TileName: ReverseTile
+    gridVector: {x: -9, y: 9}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -9, y: 10}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 10}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 11}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 11}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 12}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 12}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 13}
+  - TileName: NormalTile
+    gridVector: {x: -9, y: 13}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -9, y: 14}
+  - TileName: LightTile
+    gridVector: {x: -9, y: 14}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
-  - gridVector: {x: -9, y: 15}
+  - TileName: LightTile
+    gridVector: {x: -9, y: 15}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
-  - gridVector: {x: -9, y: 16}
+  - TileName: LightTile
+    gridVector: {x: -9, y: 16}
     tileData: {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
-  - gridVector: {x: -10, y: 0}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 0}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 1}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 1}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 2}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 2}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 3}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 3}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 4}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 4}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 5}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 5}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 6}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 6}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 7}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 7}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 8}
+  - TileName: ReverseTile
+    gridVector: {x: -10, y: 8}
     tileData: {fileID: 11400000, guid: fbc2d0822c48c8c46907c490462f597b, type: 2}
-  - gridVector: {x: -10, y: 9}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 9}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 10}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 10}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 11}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 11}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 12}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 12}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 13}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 13}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 14}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 14}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 15}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 15}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}
-  - gridVector: {x: -10, y: 16}
+  - TileName: NormalTile
+    gridVector: {x: -10, y: 16}
     tileData: {fileID: 11400000, guid: 525aa1fd4eb6d9d40b4a725f5eddc406, type: 2}

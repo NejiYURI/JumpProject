@@ -14,6 +14,11 @@ public class TileGeneratorEditor : Editor
             _tileG.GenerateBaseTile();
         }
 
+        if (GUILayout.Button("GenerateLevel"))
+        {
+            _tileG.GenerateLevel();
+        }
+
         if (GUILayout.Button("Clear"))
         {
             _tileG.ClearBaseTile();

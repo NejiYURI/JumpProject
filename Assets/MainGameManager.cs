@@ -24,15 +24,21 @@ public class MainGameManager : MonoBehaviour
     }
     private void Start()
     {
-        if (TileManager.tileManager != null && levelData != null)
-        {
-            StartCoroutine(GameStartFunc());
-        }
+        //if (TileManager.tileManager != null && levelData != null)
+        //{
+        //    StartCoroutine(GameStartCoroutine());
+        //}
+        GameStart();
     }
 
-    IEnumerator GameStartFunc()
+    IEnumerator GameStartCoroutine()
     {
         yield return TileManager.tileManager.GenerateBySetupTiles(levelData.TileData);
+        
+    }
+
+    void GameStart()
+    {
         PlayerStartPos = levelData.StartLocation;
         SpawnCharacter(PlayerStartPos, PlayerObject, false);
         if (PlayerObject.GetComponent<PlayerScript>()) PlayerObject.GetComponent<PlayerScript>().SpawnRangeTile();

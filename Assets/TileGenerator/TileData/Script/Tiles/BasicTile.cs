@@ -39,7 +39,6 @@ public class BasicTile : TileData
 
     public override void CharacterLeaveTile(TileGridData curObj)
     {
-        Debug.Log(curObj.IsFlipping);
         if (!curObj.IsFlipping)
             TileHide(curObj);
     }

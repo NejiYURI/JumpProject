@@ -56,6 +56,7 @@ public class LevelGenerator : MonoBehaviour
                 LevelTile tmpData = new LevelTile();
                 tmpData.gridVector = new Vector2Int(x*-1, y);
                 tmpData.tileData = item.tileData;
+                tmpData.TileName = item.name;
                 levelTiles.Add(tmpData);
             }
         }
