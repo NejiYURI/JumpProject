@@ -32,6 +32,8 @@ namespace CustomTileSystem
 
         public IF_GameCharacter CharacterOnTile;
 
+        public bool TriggerFlipFlop;
+
         public void SetTileObject(GameObject i_obj)
         {
             tileObject = i_obj;
@@ -89,6 +91,12 @@ namespace CustomTileSystem
             IsFlipping = i_isFlipping;
             if (tileData == null) return;
             tileData.TileFlipping(this);
+        }
+
+        public void StompTile()
+        {
+            if (tileData == null) return;
+            tileData.TileStomp();
         }
     }
 }

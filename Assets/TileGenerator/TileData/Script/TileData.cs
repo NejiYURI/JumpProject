@@ -44,4 +44,14 @@ public class TileData : ScriptableObject
     {
         return true;
     }
+
+    public virtual void TileTriggered(TileGridData curObj)
+    {
+
+    }
+
+    public virtual void TileStomp()
+    {
+
+    }
 }

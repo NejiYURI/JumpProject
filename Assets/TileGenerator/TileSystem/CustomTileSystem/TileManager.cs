@@ -197,6 +197,11 @@ namespace CustomTileSystem
 
         }
 
+        public void StompTile(Vector2Int i_pos)
+        {
+            if (HasTile(i_pos)) GridMap[i_pos].StompTile();
+        }
+
         public void GenerateLevel()
         {
             if (levelData != null) GenerateBySetupTiles(levelData.TileData);
@@ -210,11 +215,16 @@ namespace CustomTileSystem
             NewGridData.SetTileObject(newTile);
             NewGridData.GridPosition = GridPos;
             NewGridData.WorldLocation = pos;
+            NewGridData.SetTileData(tileData, true);
             if (!GridMap.ContainsKey(GridPos))
             {
                 GridMap.Add(GridPos, NewGridData);
             }
-            NewGridData.SetTileData(tileData, true);
+            if (newTile.GetComponent<TileObject>())
+            {
+                newTile.GetComponent<TileObject>().TileData = tileData;
+                newTile.GetComponent<TileObject>().gridData = NewGridData;
+            }
         }
         public void GenerateBaseTile()
         {
