@@ -45,8 +45,10 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
     private float ChargeCounter;
 
     private Dictionary<int, List<TileGridData>> RangeTileList;
-
+    public Animator animator;
+    public SpriteRenderer CharacterSprite;
     private bool CanJump;
+    private bool Jumping;
     private bool JumpCharging;
 
     private void OnEnable()
@@ -91,6 +93,11 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
 
     void MovementInput(Vector2Int i_dir)
     {
+        if (i_dir.y != 0f && CharacterSprite!=null)
+        {
+            CharacterSprite.flipX = i_dir.y > 0f;
+        }
+        if (JumpCharging || Jumping) return;
         if (TileManager.tileManager != null)
         {
             if (TileManager.tileManager.HasTile(TileVector + i_dir))
@@ -100,6 +107,10 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
                 if (TileManager.tileManager.GetTileData(TileVector + i_dir, out isSuccess).GetCanMove())
                 {
                     TileManager.tileManager.CharacterLeaveTile(TileVector);
+                    if (animator != null)
+                    {
+                        animator.SetTrigger("Move");
+                    }
                     transform.LeanMove(TileManager.tileManager.GetTileWorldPosition(TileVector + i_dir, out isSuccess), 0.1f);
                     this.TileVector = TileVector + i_dir;
                     TileManager.tileManager.CharacterInTile(TileVector, this);
@@ -121,7 +132,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         }
     }
 
-    void ShowChargeRange(int Range,bool i_Show)
+    void ShowChargeRange(int Range, bool i_Show)
     {
         for (int i = 1; i < Range; i++)
         {
@@ -134,6 +145,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
 
     IEnumerator LightFunc(int i_Range)
     {
+        
         //Debug.Log("Show range:" + i_Range);
         this.CanJump = false;
         Vector2Int tmpVec = TileVector;
@@ -141,6 +153,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         yield return new WaitForSeconds(2f);
         TileInteractScript.tileInteract.ReverseWave(tmpVec, i_Range);
         this.CanJump = true;
+       
     }
 
     IEnumerator JumpCharge()
@@ -148,12 +161,29 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         while (JumpCharging)
         {
             ChargeCounter = Mathf.Clamp(ChargeCounter + Time.deltaTime * ChargeSpeed, 0f, ChargeMaxRange - 2f);
-            ShowChargeRange(Mathf.FloorToInt(ChargeCounter + 2f),true);
+            ShowChargeRange(Mathf.FloorToInt(ChargeCounter + 2f), true);
+            if (animator != null) animator.SetBool("Charging", true);
             yield return null;
 
         }
-        StartCoroutine(LightFunc(Mathf.FloorToInt(ChargeCounter + 2f)));
+        if (animator != null)
+        {
+            animator.SetTrigger("Jump");
+        }
+        Jumping = true;
         ShowChargeRange(Mathf.FloorToInt(ChargeMaxRange), false);
+
+    }
+
+    public void Stomp()
+    {
+        if (animator != null) animator.SetBool("Charging", false);
+        StartCoroutine(LightFunc(Mathf.FloorToInt(ChargeCounter + 2f)));
         ChargeCounter = 0;
+    }
+
+    public void CanMove()
+    {
+        Jumping = false;
     }
 }
