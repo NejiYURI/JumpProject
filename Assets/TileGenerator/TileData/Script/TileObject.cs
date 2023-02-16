@@ -48,6 +48,11 @@ public class TileObject : MonoBehaviour
         this.spriteRenderer.enabled = !this.spriteRenderer.enabled;
     }
 
+    public Sprite CurrentSprite()
+    {
+        return this.spriteRenderer.sprite;
+    }
+
     void TileTrigger(string i_objId)
     {
         if (TileData == null || gridData == null) return;
