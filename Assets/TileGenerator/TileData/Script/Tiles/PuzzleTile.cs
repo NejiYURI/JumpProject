@@ -14,7 +14,7 @@ public class PuzzleTile : TileData
     }
 
 
-    public override void TileShow(TileGridData curObj)
+    public override void TileShow(TileGridData curObj, bool IsInitial = false)
     {
         if (curObj.GetTileScript() != null)
         {
@@ -22,7 +22,7 @@ public class PuzzleTile : TileData
         }
     }
 
-    public override void TileHide(TileGridData curObj)
+    public override void TileHide(TileGridData curObj, bool IsInitial = false)
     {
         if (curObj.GetTileScript() != null)
         {
@@ -34,13 +34,16 @@ public class PuzzleTile : TileData
     {
         if (curObj.IsFlipping)
         {
+           
             if (curObj.GetTileScript().CurrentSprite() == this.TileImage)
             {
                 TileShow(curObj);
+                if (GameEventManager.instance != null) GameEventManager.instance.PuzzleTrigger.Invoke(curObj.GridPosition,true);
             }
             else
             {
                 TileHide(curObj);
+                if (GameEventManager.instance != null) GameEventManager.instance.PuzzleTrigger.Invoke(curObj.GridPosition, false);
             }
         }
     }

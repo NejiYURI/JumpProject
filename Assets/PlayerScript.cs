@@ -47,6 +47,10 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
     private Dictionary<int, List<TileGridData>> RangeTileList;
     public Animator animator;
     public SpriteRenderer CharacterSprite;
+    public AudioClip MoveSound;
+    public AudioClip JumpSound;
+    public AudioClip StompSound;
+    public AudioClip ChargeSound;
     private bool CanJump;
     private bool Jumping;
     private bool JumpCharging;
@@ -78,15 +82,16 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
 
     void JumpFunc()
     {
-        if (!CanJump) return;
+        if (!CanJump || Jumping) return;
         JumpCharging = true;
         //Debug.Log(JumpCharging);
+        if (AudioController.instance != null) AudioController.instance.PlaySound(ChargeSound, 0.25f);
         if (JumpCharging) ChargeCoroutine = StartCoroutine(JumpCharge());
     }
 
     void JumpCancel()
     {
-        if (!CanJump) return;
+        if (!CanJump || Jumping) return;
         JumpCharging = false;
 
     }
@@ -111,6 +116,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
                     {
                         animator.SetTrigger("Move");
                     }
+                    if (AudioController.instance != null) AudioController.instance.PlaySound(MoveSound,0.5f);
                     transform.LeanMove(TileManager.tileManager.GetTileWorldPosition(TileVector + i_dir, out isSuccess), 0.1f);
                     this.TileVector = TileVector + i_dir;
                     TileManager.tileManager.CharacterInTile(TileVector, this);
@@ -138,14 +144,14 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         {
             foreach (var item in RangeTileList[i])
             {
-                item.SetTileShow(i_Show);
+                item.SetTileShow(i_Show,true);
             }
         }
     }
 
     IEnumerator LightFunc(int i_Range)
     {
-        
+        if (AudioController.instance != null) AudioController.instance.PlaySound(StompSound, 0.5f);
         //Debug.Log("Show range:" + i_Range);
         this.CanJump = false;
         Vector2Int tmpVec = TileVector;
@@ -170,6 +176,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         {
             animator.SetTrigger("Jump");
         }
+        if (AudioController.instance != null) AudioController.instance.PlaySound(JumpSound, 0.25f);
         Jumping = true;
         ShowChargeRange(Mathf.FloorToInt(ChargeMaxRange), false);
 

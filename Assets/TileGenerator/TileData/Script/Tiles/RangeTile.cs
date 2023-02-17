@@ -12,22 +12,22 @@ public class RangeTile : TileData
         {
             curObj.GetTileScript().TileSpriteSet(this.TileImage);
         }
-        TileHide(curObj);
+        TileHide(curObj, true);
     }
 
-    public override void TileShow(TileGridData curObj)
+    public override void TileShow(TileGridData curObj, bool IsInitial = false)
     {
         if (curObj.GetTileScript() != null)
         {
-            curObj.GetTileScript().ShowSprite(true);
+            curObj.GetTileScript().ShowSprite(true, IsInitial,0.4f);
         }
     }
 
-    public override void TileHide(TileGridData curObj)
+    public override void TileHide(TileGridData curObj, bool IsInitial = false)
     {
         if (curObj.GetTileScript() != null)
         {
-            curObj.GetTileScript().ShowSprite(false);
+            curObj.GetTileScript().ShowSprite(false, IsInitial);
         }
     }
 

@@ -6,7 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewButtonTile", menuName = "TileObj/ButtonTile")]
 public class ButtonTile : TileData
 {
-    public string TriggerId;
 
     public override void TileInit(TileGridData curObj)
     {
@@ -16,8 +15,8 @@ public class ButtonTile : TileData
         }
     }
 
-    public override void TileStomp()
+    public override void TileStomp(TileGridData curObj)
     {
-        if (GameEventManager.instance != null && !string.IsNullOrEmpty(TriggerId)) GameEventManager.instance.TileTrigger.Invoke(TriggerId);
+        if (GameEventManager.instance != null && !string.IsNullOrEmpty(curObj.GetTileScript().TriggerId)) GameEventManager.instance.TileTrigger.Invoke(curObj.GetTileScript().TriggerId);
     }
 }

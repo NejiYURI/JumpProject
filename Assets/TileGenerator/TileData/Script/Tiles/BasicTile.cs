@@ -13,28 +13,28 @@ public class BasicTile : TileData
         {
             curObj.GetTileScript().TileSpriteSet(this.TileImage);
         }
-        TileHide(curObj);
+        TileHide(curObj,true);
     }
 
-    public override void TileShow(TileGridData curObj)
+    public override void TileShow(TileGridData curObj, bool IsInitial = false)
     {
         if (curObj.GetTileScript() != null)
         {
-            curObj.GetTileScript().ShowSprite(true);
+            curObj.GetTileScript().ShowSprite(true, IsInitial);
         }
     }
 
-    public override void TileHide(TileGridData curObj)
+    public override void TileHide(TileGridData curObj,bool IsInitial=false)
     {
         if (curObj.GetTileScript() != null)
         {
-            curObj.GetTileScript().ShowSprite(false);
+            curObj.GetTileScript().ShowSprite(false, IsInitial);
         }
     }
 
     public override void CharacterInTile(TileGridData curObj, bool IsPlayer)
     {
-        if (IsPlayer) TileShow(curObj);
+        if (IsPlayer) TileShow(curObj, true);
     }
 
     public override void CharacterLeaveTile(TileGridData curObj)

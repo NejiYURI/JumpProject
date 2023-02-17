@@ -56,6 +56,10 @@ MonoBehaviour:
   ChargeCounter: 0
   animator: {fileID: 4508290104985874352}
   CharacterSprite: {fileID: 7781331765123674626}
+  MoveSound: {fileID: 8300000, guid: 337a88b361e7b5344af403bdb63cdd9f, type: 3}
+  JumpSound: {fileID: 8300000, guid: 7cea0ede25c1cf94e8fa3f2443cc7e07, type: 3}
+  StompSound: {fileID: 8300000, guid: e1fc8d1c7ab927a4d9d37fda880691b6, type: 3}
+  ChargeSound: {fileID: 8300000, guid: ebd5a23685a29444ba622b34fd82aac3, type: 3}
 --- !u!95 &4508290104985874352
 Animator:
   serializedVersion: 4

@@ -11,4 +11,6 @@ public class GameEventManager : MonoBehaviour
         instance= this;
     }
     public UnityEvent<string> TileTrigger;
+
+    public UnityEvent<Vector2Int,bool> PuzzleTrigger;
 }

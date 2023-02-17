@@ -77,13 +77,13 @@ namespace CustomTileSystem
             if (initTile) tileData.TileInit(this);
         }
 
-        public void SetTileShow(bool i_Set)
+        public void SetTileShow(bool i_Set,bool IsInitial=false)
         {
             if (tileData == null) return;
             if (i_Set)
-                tileData.TileShow(this);
+                tileData.TileShow(this, IsInitial);
             else
-                tileData.TileHide(this);
+                tileData.TileHide(this, IsInitial);
         }
 
         public void SetTileFlipping(bool i_isFlipping)
@@ -96,7 +96,7 @@ namespace CustomTileSystem
         public void StompTile()
         {
             if (tileData == null) return;
-            tileData.TileStomp();
+            tileData.TileStomp(this);
         }
     }
 }

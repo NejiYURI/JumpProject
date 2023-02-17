@@ -10,12 +10,12 @@ public class TileData : ScriptableObject
 
     }
 
-    public virtual void TileShow(TileGridData curObj)
+    public virtual void TileShow(TileGridData curObj, bool IsInitial = false)
     {
 
     }
 
-    public virtual void TileHide(TileGridData curObj)
+    public virtual void TileHide(TileGridData curObj, bool IsInitial = false)
     {
 
     }
@@ -50,7 +50,7 @@ public class TileData : ScriptableObject
 
     }
 
-    public virtual void TileStomp()
+    public virtual void TileStomp(TileGridData curObj)
     {
 
     }

@@ -12,7 +12,7 @@ public class ColorToTileData
 {
     public string name;
     public Color color;
-    public TileData tileData;
+    public List<TileData> tileData;
     public bool IsStartPoint;
 }
 
@@ -54,8 +54,9 @@ public class LevelGenerator : MonoBehaviour
                 Debug.Log(item.name);
                 if (item.IsStartPoint) StartLocation = new Vector2Int(x * -1, y);
                 LevelTile tmpData = new LevelTile();
-                tmpData.gridVector = new Vector2Int(x*-1, y);
-                tmpData.tileData = item.tileData;
+                tmpData.gridVector = new Vector2Int(x * -1, y);
+                if (item.tileData.Count > 0)
+                    tmpData.tileData = item.tileData[Random.Range(0, item.tileData.Count)];
                 tmpData.TileName = item.name;
                 levelTiles.Add(tmpData);
             }

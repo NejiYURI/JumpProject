@@ -13,22 +13,22 @@ public class ReverseTile : TileData
         {
             curObj.GetTileScript().TileSpriteSet(this.TileImage);
         }
-        TileShow(curObj);
+        TileShow(curObj, true);
     }
 
-    public override void TileShow(TileGridData curObj)
+    public override void TileShow(TileGridData curObj, bool IsInitial = false)
     {
         if (curObj.GetTileScript() != null)
         {
-            curObj.GetTileScript().ShowSprite(true);
+            curObj.GetTileScript().ShowSprite(true, IsInitial);
         }
     }
 
-    public override void TileHide(TileGridData curObj)
+    public override void TileHide(TileGridData curObj, bool IsInitial = false)
     {
         if (curObj.GetTileScript() != null)
         {
-            curObj.GetTileScript().ShowSprite(false);
+            curObj.GetTileScript().ShowSprite(false, IsInitial);
         }
     }
 
@@ -47,7 +47,7 @@ public class ReverseTile : TileData
 
     public override void CharacterInTile(TileGridData curObj, bool IsPlayer)
     {
-        if (IsPlayer) TileShow(curObj);
+        if (IsPlayer) TileShow(curObj, true);
     }
 
     public override void CharacterLeaveTile(TileGridData curObj)

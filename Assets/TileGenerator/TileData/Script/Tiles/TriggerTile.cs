@@ -17,24 +17,24 @@ public class TriggerTile : TileData
         }
         if (!ShowInStart)
         {
-            TileHide(curObj);
+            TileHide(curObj, true);
         }
             
     }
 
-    public override void TileShow(TileGridData curObj)
+    public override void TileShow(TileGridData curObj, bool IsInitial = false)
     {
         if (curObj.GetTileScript() != null)
         {
-            curObj.GetTileScript().ShowSprite(true);
+            curObj.GetTileScript().ShowSprite(true, IsInitial);
         }
     }
 
-    public override void TileHide(TileGridData curObj)
+    public override void TileHide(TileGridData curObj, bool IsInitial = false)
     {
         if (curObj.GetTileScript() != null)
         {
-            curObj.GetTileScript().ShowSprite(false);
+            curObj.GetTileScript().ShowSprite(false, IsInitial);
         }
     }
 
