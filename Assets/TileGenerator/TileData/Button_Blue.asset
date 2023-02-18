@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Button_Blue
   m_EditorClassIdentifier: 
   TileImage: {fileID: 1289467141, guid: e2d1137893c73a949a8c9801f8f3eab0, type: 3}
+  ButtonSound: {fileID: 8300000, guid: 3a97ba584ff2fa540ab21057739b23fe, type: 3}

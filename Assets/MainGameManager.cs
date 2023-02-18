@@ -11,6 +11,13 @@ public class MainGameManager : MonoBehaviour
 
     public static MainGameManager mainGameManager;
     public GameObject PlayerObject;
+    public CameraFollow CameraScript;
+    public Transform CameraStartPos;
+    public Transform CameraEndPos;
+
+    public float WaitTime = 2f;
+
+    public AudioClip StageClearSound;
 
     public LevelData levelData;
 
@@ -24,24 +31,22 @@ public class MainGameManager : MonoBehaviour
     }
     private void Start()
     {
-        //if (TileManager.tileManager != null && levelData != null)
-        //{
-        //    StartCoroutine(GameStartCoroutine());
-        //}
         GameStart();
     }
 
     IEnumerator GameStartCoroutine()
     {
         yield return TileManager.tileManager.GenerateBySetupTiles(levelData.TileData);
-        
+
     }
 
     void GameStart()
     {
+        if (CameraScript != null) CameraScript.transform.position = CameraStartPos.position + CameraScript.Offset;
         PlayerStartPos = levelData.StartLocation;
         SpawnCharacter(PlayerStartPos, PlayerObject, false);
         if (PlayerObject.GetComponent<PlayerScript>()) PlayerObject.GetComponent<PlayerScript>().SpawnRangeTile();
+        if (GameEventManager.instance) GameEventManager.instance.StageClear.AddListener(StageClear);
         if (TileManager.tileManager.HasTile(PlayerStartPos))
         {
             SetPlayerPos(PlayerStartPos);
@@ -89,6 +94,36 @@ public class MainGameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    void StageClear()
+    {
+        if (AudioController.instance) AudioController.instance.PlaySound(StageClearSound, 0.5f);
+        StartCoroutine(StageClearWait());
+    }
 
+    IEnumerator StageClearWait()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (CameraScript != null)
+        {
+            CameraScript.LateTime = CameraScript.LateTime / 4.5f;
+            CameraScript.TargetObj = CameraEndPos;
+        }
+        yield return new WaitForSeconds(WaitTime);
+        ChangeScene();
+    }
+
+    void ChangeScene()
+    {
+        if (SceneController.instance)
+        {
+            string NextScene = SceneController.instance.NextScene(SceneManager.GetActiveScene().name);
+            if (!string.IsNullOrEmpty(NextScene))
+                SceneManager.LoadScene(NextScene);
+            else
+                Debug.LogWarning("Error! no next scene setting");
+        }
+        else
+            Debug.LogWarning("No scene controller");
+    }
 }
 

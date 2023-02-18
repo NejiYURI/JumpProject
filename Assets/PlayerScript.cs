@@ -77,6 +77,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         inputActions.BasicControl.Down.performed += _ => MovementInput(new Vector2Int(-1, 0));
         inputActions.BasicControl.Left.performed += _ => MovementInput(new Vector2Int(0, -1));
         inputActions.BasicControl.Right.performed += _ => MovementInput(new Vector2Int(0, 1));
+        if (GameEventManager.instance != null) GameEventManager.instance.StageClear.AddListener(StageClear);
         CanJump = true;
     }
 
@@ -87,6 +88,11 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         //Debug.Log(JumpCharging);
         if (AudioController.instance != null) AudioController.instance.PlaySound(ChargeSound, 0.25f);
         if (JumpCharging) ChargeCoroutine = StartCoroutine(JumpCharge());
+    }
+
+    void StageClear()
+    {
+        inputActions.Disable();
     }
 
     void JumpCancel()

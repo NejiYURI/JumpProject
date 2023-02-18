@@ -145,7 +145,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 128
         width: 64
         height: 64
       alignment: 7
@@ -166,7 +166,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 64
         width: 64
         height: 64
       alignment: 7
@@ -187,7 +187,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 64
         width: 64
         height: 64
       alignment: 7
@@ -208,7 +208,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 192
         width: 64
         height: 64
       alignment: 7
@@ -220,6 +220,27 @@ TextureImporter:
       bones: []
       spriteID: 4133a147d216ffc47852b06a7f35e9dd
       internalID: -1925509859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stomp
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1603cc6270908674181b51cbad08b7f9
+      internalID: 179453661
       vertices: []
       indices: 
       edges: []
@@ -236,6 +257,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Move: -1925509859
+      Stomp: 179453661
       Idle1: 1908074467
       Idle2: -1650800702
       Charge: 511610357

@@ -13,4 +13,9 @@ public class EndTile : TileData
             curObj.GetTileScript().TileSpriteSet(this.TileImage);
         }
     }
+
+    public override void CharacterInTile(TileGridData curObj, bool IsPlayer)
+    {
+        if (IsPlayer && GameEventManager.instance != null) GameEventManager.instance.StageClear.Invoke();
+    }
 }
