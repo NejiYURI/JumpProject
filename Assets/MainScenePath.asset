@@ -20,6 +20,10 @@ MonoBehaviour:
   - CurrentScene: ReverseTileMap
     NextScene: TriggerTileScene
   - CurrentScene: TriggerTileScene
+    NextScene: TriggerPuzzle
+  - CurrentScene: TriggerPuzzle
     NextScene: DrawPuzzleMap
+  - CurrentScene: DrawPuzzleMap
+    NextScene: EndScene
   - CurrentScene: EndScene
     NextScene: Tutorial

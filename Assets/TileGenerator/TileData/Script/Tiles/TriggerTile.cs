@@ -15,9 +15,14 @@ public class TriggerTile : TileData
         {
             curObj.GetTileScript().TileSpriteSet(this.TileImage);
         }
+        curObj.TriggerFlipFlop = ShowInStart;
         if (!ShowInStart)
         {
             TileHide(curObj, true);
+        }
+        else
+        {
+            TileShow(curObj, true);
         }
             
     }

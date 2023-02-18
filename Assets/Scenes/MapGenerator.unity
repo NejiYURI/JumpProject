@@ -222,16 +222,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbe45a7e2a499e4eada14e0f2081ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapImage: {fileID: 2800000, guid: 1f2731bceb03eea42a7a7e9cb1526219, type: 3}
+  mapImage: {fileID: 2800000, guid: 7a8da05427d8ed14a8c685a6354c75aa, type: 3}
   ColorToTileDatas:
   - name: StartPoint
     color: {r: 0, g: 1, b: 0, a: 1}
     tileData:
-    - {fileID: 11400000, guid: 659e4efd810aa7c448bd134c2038f43b, type: 2}
-    - {fileID: 11400000, guid: f597daf2ef1db3648846ab39f87e81d4, type: 2}
-    - {fileID: 11400000, guid: 828c8db64e80d984ab5630ec611d5150, type: 2}
-    - {fileID: 11400000, guid: a60150cb3837de746bbf8c7982651177, type: 2}
-    - {fileID: 11400000, guid: 35ae48017593bd84c84e43bcfa0c9167, type: 2}
+    - {fileID: 11400000, guid: db6e8222e81acd641a3fc3bce522e74d, type: 2}
+    - {fileID: 11400000, guid: 4b151550e5b66dc49a3c0c2f288d84ce, type: 2}
+    - {fileID: 11400000, guid: e70276290900b7745a9f705326a93f65, type: 2}
+    - {fileID: 11400000, guid: 37e9be33fc38fba428e72d61d69fa709, type: 2}
+    - {fileID: 11400000, guid: 9319f771fafecd44b88356d385b47a4d, type: 2}
     IsStartPoint: 1
   - name: NormalTile
     color: {r: 0, g: 0, b: 0, a: 1}
@@ -245,16 +245,16 @@ MonoBehaviour:
   - name: EndTile
     color: {r: 0, g: 0, b: 1, a: 1}
     tileData:
-    - {fileID: 11400000, guid: 3df267e05844e584a8ed90f2c525f63a, type: 2}
+    - {fileID: 11400000, guid: f03bf9da1507ad54a98d200030d18a6a, type: 2}
     IsStartPoint: 0
   - name: LightTile
     color: {r: 0, g: 1, b: 1, a: 1}
     tileData:
-    - {fileID: 11400000, guid: 35ae48017593bd84c84e43bcfa0c9167, type: 2}
-    - {fileID: 11400000, guid: a60150cb3837de746bbf8c7982651177, type: 2}
-    - {fileID: 11400000, guid: 828c8db64e80d984ab5630ec611d5150, type: 2}
-    - {fileID: 11400000, guid: f597daf2ef1db3648846ab39f87e81d4, type: 2}
-    - {fileID: 11400000, guid: 659e4efd810aa7c448bd134c2038f43b, type: 2}
+    - {fileID: 11400000, guid: db6e8222e81acd641a3fc3bce522e74d, type: 2}
+    - {fileID: 11400000, guid: 4b151550e5b66dc49a3c0c2f288d84ce, type: 2}
+    - {fileID: 11400000, guid: e70276290900b7745a9f705326a93f65, type: 2}
+    - {fileID: 11400000, guid: 37e9be33fc38fba428e72d61d69fa709, type: 2}
+    - {fileID: 11400000, guid: 9319f771fafecd44b88356d385b47a4d, type: 2}
     IsStartPoint: 0
   - name: ReverseTile
     color: {r: 1, g: 0.48235294, b: 0, a: 1}
