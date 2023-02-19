@@ -611,7 +611,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.55}
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -632,7 +632,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.55}
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -653,7 +653,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.55}
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -674,7 +674,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.55}
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -695,7 +695,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.55}
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -980,6 +980,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Basic_CustomTiles_40
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762d9c8a5f6b25f49bc03d447915ca86
+      internalID: -2129533932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_CustomTiles_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b93ccd31eba96747ba44d0b70c8ed86
+      internalID: -671302215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_CustomTiles_42
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab7b66366c05e142b04b18a1e800ea3
+      internalID: 1867966401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_CustomTiles_43
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a8eb6eb7cc3554c8f201e301b01326
+      internalID: 1364346947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_CustomTiles_44
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0025fb6b5d6b7b4d920fa07a36c7e82
+      internalID: 969796354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_CustomTiles_45
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2572d49e7bc93746bcbbfacc9f772d9
+      internalID: 605446752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -991,33 +1117,40 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Basic_CustomTiles_4: -1615684157
+      Basic_CustomTiles_41: -671302215
       Basic_CustomTiles_19: 810936653
+      Basic_CustomTiles_27: -908312029
+      Basic_CustomTiles_9: 1541053868
+      Basic_CustomTiles_34: -527737911
+      Basic_CustomTiles_32: 1661807640
+      Basic_CustomTiles_6: 989239122
+      Basic_CustomTiles_1: -714230164
+      Basic_CustomTiles_36: -2142534378
+      Basic_CustomTiles_13: -1176362770
+      Basic_CustomTiles_0: 1258325933
+      Basic_CustomTiles_40: -2129533932
+      Basic_CustomTiles_33: 999848430
+      Basic_CustomTiles_45: 605446752
+      Basic_CustomTiles_4: -1615684157
+      Basic_CustomTiles_26: 533329464
       Basic_CustomTiles_30: 1148033940
       Basic_CustomTiles_18: -1735652963
-      Basic_CustomTiles_9: 1541053868
       Basic_CustomTiles_17: 1293832283
       Basic_CustomTiles_14: -186776378
       Basic_CustomTiles_21: 1289467141
       Basic_CustomTiles_2: 1161687210
-      Basic_CustomTiles_34: -527737911
-      Basic_CustomTiles_26: 533329464
+      Basic_CustomTiles_37: -206472205
       Basic_CustomTiles_20: 157513291
-      Basic_CustomTiles_32: 1661807640
-      Basic_CustomTiles_6: 989239122
-      Basic_CustomTiles_1: -714230164
       Basic_CustomTiles_3: 2074722953
       Basic_CustomTiles_11: 1140122323
       Basic_CustomTiles_10: -358735647
       Basic_CustomTiles_12: 136374089
-      Basic_CustomTiles_13: -1176362770
+      Basic_CustomTiles_44: 969796354
       Basic_CustomTiles_38: 1027510049
-      Basic_CustomTiles_0: 1258325933
-      Basic_CustomTiles_36: -2142534378
+      Basic_CustomTiles_43: 1364346947
       Basic_CustomTiles_23: 1831939710
       Basic_CustomTiles_22: -848210288
-      Basic_CustomTiles_27: -908312029
-      Basic_CustomTiles_37: -206472205
+      Basic_CustomTiles_42: 1867966401
       Basic_CustomTiles_16: 1813391702
       Basic_CustomTiles_7: 1545698180
       Basic_CustomTiles_24: 824117202
@@ -1025,7 +1158,6 @@ TextureImporter:
       Basic_CustomTiles_28: -519860356
       Basic_CustomTiles_31: 816050158
       Basic_CustomTiles_25: -120772908
-      Basic_CustomTiles_33: 999848430
       Basic_CustomTiles_15: -1540383659
       Basic_CustomTiles_29: 412033837
       Basic_CustomTiles_8: 920840139

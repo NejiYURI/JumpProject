@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b3dc1382b142847a268bb142aa3ea0, type: 3}
+  m_Name: TriggerTile_Wood 3
+  m_EditorClassIdentifier: 
+  TileImage: {fileID: 1364346947, guid: e2d1137893c73a949a8c9801f8f3eab0, type: 3}
+  ShowInStart: 0

@@ -10,9 +10,13 @@ public class TitleScript : MonoBehaviour
     public static TitleScript instance;
     public Vector2 Center;
     public Vector2 Size;
-
+    public Transform CameraObj;
+    public Transform CameraEndPos;
+    public GameObject UIPanel;
     public Transform StageList;
     public GameObject StageBtn;
+  
+
 
     public GameObject StageSelectBtn;
     public GameObject BasicMenu;
@@ -23,6 +27,8 @@ public class TitleScript : MonoBehaviour
     private Dictionary<string, int> UnlockStages;
 
     public int MaxWaveSize;
+
+    private bool GameStartMove;
 
     private void Awake()
     {
@@ -46,6 +52,12 @@ public class TitleScript : MonoBehaviour
         StartCoroutine(WaveTimer());
     }
 
+    private void FixedUpdate()
+    {
+        if (GameStartMove)
+            CameraObj.position = Vector3.Lerp(CameraObj.position, CameraEndPos.position, 0.02f);
+    }
+
     void SetStageList()
     {
         bool CanShowBtn = false;
@@ -56,7 +68,7 @@ public class TitleScript : MonoBehaviour
             {
                 CanShowBtn = true;
                 GameObject btn = Instantiate(StageBtn, StageList.position, Quaternion.identity);
-                btn.transform.SetParent(StageList,false);
+                btn.transform.SetParent(StageList, false);
                 if (btn.GetComponent<StageBtnScript>()) btn.GetComponent<StageBtnScript>().InitialSet(item.Key);
             }
         }
@@ -92,10 +104,16 @@ public class TitleScript : MonoBehaviour
 
     public void LoadScene(string SceneName)
     {
-        SceneManager.LoadScene(SceneName);
+        GameStartMove = true;
+        UIPanel.SetActive(false);
+        StartCoroutine(LoadCounter(SceneName));
     }
 
-
+    IEnumerator LoadCounter(string SceneName)
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(SceneName);
+    }
 
 
     IEnumerator WaveTimer()
@@ -111,18 +129,19 @@ public class TitleScript : MonoBehaviour
     {
         Vector2 GetPos;
         Vector2Int tmpVec;
+        Debug.Log(TileManager.tileManager.ToGridVector(Center));
         int Range;
         do
         {
             GetPos = new Vector2(Center.x + Random.Range(-1f * Size.x, Size.x), Center.y + Random.Range(-1f * Size.y, Size.y));
             tmpVec = TileManager.tileManager.ToGridVector(GetPos);
-            Range = Random.Range(2, 6);
+            Range = Random.Range(2, 4);
         } while (ActivatingTile.ContainsKey(tmpVec) || !CheckDistance(tmpVec, Range));
         ActivatingTile.Add(tmpVec, Range);
         TileInteractScript.tileInteract.StartWave(tmpVec, Range);
         yield return new WaitForSeconds(Random.Range(2, 5));
         TileInteractScript.tileInteract.ReverseWave(tmpVec, Range);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         ActivatingTile.Remove(tmpVec);
     }
 

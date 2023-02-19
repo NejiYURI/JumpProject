@@ -222,16 +222,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbe45a7e2a499e4eada14e0f2081ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapImage: {fileID: 2800000, guid: e760afa01cb4700488f69bd0bbbb18ed, type: 3}
+  mapImage: {fileID: 2800000, guid: 10b64ad65674ebb489eb361b74c5764e, type: 3}
   ColorToTileDatas:
   - name: StartPoint
     color: {r: 0, g: 1, b: 0, a: 1}
     tileData:
-    - {fileID: 11400000, guid: db6e8222e81acd641a3fc3bce522e74d, type: 2}
-    - {fileID: 11400000, guid: 4b151550e5b66dc49a3c0c2f288d84ce, type: 2}
-    - {fileID: 11400000, guid: e70276290900b7745a9f705326a93f65, type: 2}
-    - {fileID: 11400000, guid: 37e9be33fc38fba428e72d61d69fa709, type: 2}
-    - {fileID: 11400000, guid: 9319f771fafecd44b88356d385b47a4d, type: 2}
+    - {fileID: 11400000, guid: 35ae48017593bd84c84e43bcfa0c9167, type: 2}
+    - {fileID: 11400000, guid: a60150cb3837de746bbf8c7982651177, type: 2}
+    - {fileID: 11400000, guid: 828c8db64e80d984ab5630ec611d5150, type: 2}
+    - {fileID: 11400000, guid: f597daf2ef1db3648846ab39f87e81d4, type: 2}
+    - {fileID: 11400000, guid: 659e4efd810aa7c448bd134c2038f43b, type: 2}
     IsStartPoint: 1
   - name: NormalTile
     color: {r: 0, g: 0, b: 0, a: 1}
@@ -250,7 +250,11 @@ MonoBehaviour:
   - name: LightTile
     color: {r: 0, g: 1, b: 1, a: 1}
     tileData:
-    - {fileID: 11400000, guid: 6901695e0a6e42c4ab69ffc5a8a63666, type: 2}
+    - {fileID: 11400000, guid: 35ae48017593bd84c84e43bcfa0c9167, type: 2}
+    - {fileID: 11400000, guid: a60150cb3837de746bbf8c7982651177, type: 2}
+    - {fileID: 11400000, guid: 828c8db64e80d984ab5630ec611d5150, type: 2}
+    - {fileID: 11400000, guid: f597daf2ef1db3648846ab39f87e81d4, type: 2}
+    - {fileID: 11400000, guid: 659e4efd810aa7c448bd134c2038f43b, type: 2}
     IsStartPoint: 0
   - name: ReverseTile
     color: {r: 1, g: 0.48235294, b: 0, a: 1}
@@ -264,12 +268,16 @@ MonoBehaviour:
   - name: TriggerTile
     color: {r: 1, g: 0, b: 0, a: 1}
     tileData:
-    - {fileID: 11400000, guid: f4aa7a8b10265054b8e7e7b0d4d88c7c, type: 2}
+    - {fileID: 11400000, guid: 209869ef7f82ce14194e86fb94a28771, type: 2}
+    - {fileID: 11400000, guid: d455e57d8e7f3a144acf2f7393c99bb2, type: 2}
+    - {fileID: 11400000, guid: 5ec2b482faf936c4fa33214e25fb066d, type: 2}
+    - {fileID: 11400000, guid: ad1d4e319b676db4faabf3094f96408d, type: 2}
+    - {fileID: 11400000, guid: 8aff7dcc544c33e43b040e4c1532b775, type: 2}
     IsStartPoint: 0
   - name: ButtonTile
     color: {r: 1, g: 1, b: 0, a: 1}
     tileData:
-    - {fileID: 11400000, guid: d380bab24f7f2204382b03e1746fa097, type: 2}
+    - {fileID: 11400000, guid: c25ace90a08052743a5098f1ca328738, type: 2}
     IsStartPoint: 0
   - name: PuzzleTile
     color: {r: 1, g: 0, b: 1, a: 1}
