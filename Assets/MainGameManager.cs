@@ -31,6 +31,7 @@ public class MainGameManager : MonoBehaviour
     }
     private void Start()
     {
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name,1);
         GameStart();
     }
 

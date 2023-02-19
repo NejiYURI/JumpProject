@@ -11,5 +11,6 @@ public class ScenePath
 [CreateAssetMenu(fileName = "NewScenePath", menuName = "CreateScenePath")]
 public class SceneData : ScriptableObject
 {
+    public List<string> StageNames;
     public List<ScenePath> ScenePaths;
 }

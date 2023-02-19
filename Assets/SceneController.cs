@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class SceneController : MonoBehaviour
 {
@@ -42,5 +41,10 @@ public class SceneController : MonoBehaviour
         if (scenePathSetting.ContainsKey(i_currentSceneName)) return scenePathSetting[i_currentSceneName];
         
         return null;
+    }
+
+    public List<string> GetStages()
+    {
+        return SceneSetting.StageNames;
     }
 }

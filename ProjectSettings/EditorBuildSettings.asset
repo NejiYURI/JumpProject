@@ -6,21 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 8a403207fa214414b9235da94fd15e9a
+  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: aa70603c39521304492b4990f58adcc0
   - enabled: 1
-    path: Assets/Scenes/TriggerTileScene.unity
-    guid: a0e9a95adc4120e4bb712fd85152639f
-  - enabled: 1
-    path: Assets/Scenes/DrawPuzzleMap.unity
-    guid: 1bcdef134b50c7448abf1c1c5ee7bc2a
-  - enabled: 1
-    path: Assets/Scenes/ReverseTileMap.unity
-    guid: d7caf10145352e44391a5d802acd968e
-  - enabled: 1
-    path: Assets/Scenes/Maze1.unity
+    path: Assets/Scenes/Stage1.unity
     guid: e1839a7e8977e1c4aa1a44e068f5cc3e
   - enabled: 1
-    path: Assets/Scenes/TriggerPuzzle.unity
+    path: Assets/Scenes/Stage2.unity
+    guid: d7caf10145352e44391a5d802acd968e
+  - enabled: 1
+    path: Assets/Scenes/Stage3.unity
+    guid: 97aa4ca68f71ed14eb1aee8a9d048e8a
+  - enabled: 1
+    path: Assets/Scenes/Stage4.unity
+    guid: a0e9a95adc4120e4bb712fd85152639f
+  - enabled: 1
+    path: Assets/Scenes/Stage5.unity
     guid: 40de092aa2bd74a4299f4568499ef734
+  - enabled: 1
+    path: Assets/Scenes/Stage6.unity
+    guid: 1bcdef134b50c7448abf1c1c5ee7bc2a
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: b8606882a9ab3404cbb80aed9bdb7efc
   m_configObjects: {}

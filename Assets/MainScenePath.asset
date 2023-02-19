@@ -12,18 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77dd68ade6e11344babcb16c2e050243, type: 3}
   m_Name: MainScenePath
   m_EditorClassIdentifier: 
+  StageNames:
+  - Tutorial
+  - Stage1
+  - Stage2
+  - Stage3
+  - Stage4
+  - Stage5
+  - Stage6
+  - EndScene
   ScenePaths:
   - CurrentScene: Tutorial
-    NextScene: Maze1
-  - CurrentScene: Maze1
-    NextScene: ReverseTileMap
-  - CurrentScene: ReverseTileMap
-    NextScene: TriggerTileScene
-  - CurrentScene: TriggerTileScene
-    NextScene: TriggerPuzzle
-  - CurrentScene: TriggerPuzzle
-    NextScene: DrawPuzzleMap
-  - CurrentScene: DrawPuzzleMap
+    NextScene: Stage1
+  - CurrentScene: Stage1
+    NextScene: Stage2
+  - CurrentScene: Stage2
+    NextScene: Stage3
+  - CurrentScene: Stage3
+    NextScene: Stage4
+  - CurrentScene: Stage4
+    NextScene: Stage5
+  - CurrentScene: Stage5
+    NextScene: Stage6
+  - CurrentScene: Stage6
     NextScene: EndScene
   - CurrentScene: EndScene
-    NextScene: Tutorial
+    NextScene: Title

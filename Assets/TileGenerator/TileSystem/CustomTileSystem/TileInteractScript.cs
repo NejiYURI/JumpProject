@@ -10,7 +10,7 @@ namespace CustomTileSystem
 
         private TileManager tileManager;
         public AnimationCurve WaveCurve;
-        [Range(1, 5)]
+        [Range(0.5f, 5)]
         public float WaveSpeed = 1f;
 
 
