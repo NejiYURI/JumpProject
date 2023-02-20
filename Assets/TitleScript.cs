@@ -129,7 +129,6 @@ public class TitleScript : MonoBehaviour
     {
         Vector2 GetPos;
         Vector2Int tmpVec;
-        Debug.Log(TileManager.tileManager.ToGridVector(Center));
         int Range;
         do
         {

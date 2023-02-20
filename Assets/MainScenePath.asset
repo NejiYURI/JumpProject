@@ -35,6 +35,8 @@ MonoBehaviour:
   - CurrentScene: Stage5
     NextScene: Stage6
   - CurrentScene: Stage6
+    NextScene: ExitMap
+  - CurrentScene: ExitMap
     NextScene: EndScene
   - CurrentScene: EndScene
     NextScene: Title

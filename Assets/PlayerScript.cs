@@ -104,9 +104,9 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
 
     void MovementInput(Vector2Int i_dir)
     {
-        if (i_dir.y != 0f && CharacterSprite!=null)
+        if (i_dir != Vector2.zero && CharacterSprite != null)
         {
-            CharacterSprite.flipX = i_dir.y > 0f;
+            CharacterSprite.flipX = i_dir.y > 0f || i_dir.x < 0f;
         }
         if (JumpCharging || Jumping) return;
         if (TileManager.tileManager != null)
@@ -122,7 +122,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
                     {
                         animator.SetTrigger("Move");
                     }
-                    if (AudioController.instance != null) AudioController.instance.PlaySound(MoveSound,0.5f);
+                    if (AudioController.instance != null) AudioController.instance.PlaySound(MoveSound, 0.5f);
                     transform.LeanMove(TileManager.tileManager.GetTileWorldPosition(TileVector + i_dir, out isSuccess), 0.1f);
                     this.TileVector = TileVector + i_dir;
                     TileManager.tileManager.CharacterInTile(TileVector, this);
@@ -150,7 +150,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         {
             foreach (var item in RangeTileList[i])
             {
-                item.SetTileShow(i_Show,true);
+                item.SetTileShow(i_Show, true);
             }
         }
     }
@@ -165,7 +165,7 @@ public class PlayerScript : MonoBehaviour, IF_GameCharacter
         yield return new WaitForSeconds(2f);
         TileInteractScript.tileInteract.ReverseWave(tmpVec, i_Range);
         this.CanJump = true;
-       
+
     }
 
     IEnumerator JumpCharge()

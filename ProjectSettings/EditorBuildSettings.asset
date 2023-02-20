@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: b8606882a9ab3404cbb80aed9bdb7efc
+  - enabled: 1
+    path: Assets/Scenes/ExitMap.unity
+    guid: f1eb156364f3d5f4aabd8f4c72ced275
   m_configObjects: {}
