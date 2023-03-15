@@ -109,6 +109,11 @@ public class TitleScript : MonoBehaviour
         StartCoroutine(LoadCounter(SceneName));
     }
 
+    public void ExitBnt()
+    {
+        Application.Quit();
+    }
+
     IEnumerator LoadCounter(string SceneName)
     {
         yield return new WaitForSeconds(3f);
